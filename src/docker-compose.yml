@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  imperugo.wpc.netflix.apis:
+    image: imperugo.wpc.netflix.apis
+    build:
+      context: ./imperugo.wpc.netflix.apis
+      dockerfile: Dockerfile

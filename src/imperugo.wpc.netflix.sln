@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "imperugo.wpc.netflix.apis", "imperugo.wpc.netflix.apis\imperugo.wpc.netflix.apis.csproj", "{16245724-5CAC-49C4-BD01-2CB291AE5DE5}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{351F4107-D737-4762-8BC0-A35CF004B664}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16245724-5CAC-49C4-BD01-2CB291AE5DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16245724-5CAC-49C4-BD01-2CB291AE5DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16245724-5CAC-49C4-BD01-2CB291AE5DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16245724-5CAC-49C4-BD01-2CB291AE5DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351F4107-D737-4762-8BC0-A35CF004B664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351F4107-D737-4762-8BC0-A35CF004B664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351F4107-D737-4762-8BC0-A35CF004B664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351F4107-D737-4762-8BC0-A35CF004B664}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14E176FE-24DB-4DDC-A2DC-AE6BDEF6E768}
+	EndGlobalSection
+EndGlobal
