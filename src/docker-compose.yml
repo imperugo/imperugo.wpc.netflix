@@ -6,3 +6,9 @@ services:
     build:
       context: ./imperugo.wpc.netflix.apis
       dockerfile: Dockerfile
+
+  quickstartidentityserver:
+    image: quickstartidentityserver
+    build:
+      context: ./QuickstartIdentityServer
+      dockerfile: Dockerfile

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using imperugo.wpc.netflix.apis.Configuration;
+using imperugo.wpc.netflix.apis.Extensions;
 using imperugo.wpc.netflix.apis.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
@@ -18,6 +19,7 @@ namespace imperugo.wpc.netflix.apis
 	{
 		private readonly RedisConfiguration redisConfiguration = new RedisConfiguration();
 		private readonly UrlBuilderConfiguration urlBuilderConfiguration = new UrlBuilderConfiguration();
+		private readonly MongoDbDatabaseConfiguration databaseConfiguration = new MongoDbDatabaseConfiguration();
 
 		private readonly IHostingEnvironment environment;
 
@@ -27,10 +29,15 @@ namespace imperugo.wpc.netflix.apis
 
 			configuration.GetSection("redis").Bind(redisConfiguration);
 			configuration.GetSection("urlBuilder").Bind(urlBuilderConfiguration);
+			configuration.GetSection("db").Bind(databaseConfiguration);
 		}
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddSingleton(redisConfiguration);
+			services.AddSingleton(urlBuilderConfiguration);
+			services.AddSingleton(databaseConfiguration);
+
 			// ** Authentication ** //
 			services.AddAuthentication("Bearer")
 				.AddJwtBearer(options =>
@@ -42,7 +49,14 @@ namespace imperugo.wpc.netflix.apis
 						NameClaimType = "name",
 						RoleClaimType = "role"
 					};
+
+					if (this.environment.IsDevelopment())
+					{
+						options.RequireHttpsMetadata = false;
+					}
 				});
+
+			services.AddMongoDb();
 
 			services
 				.AddDataProtection()
@@ -123,7 +137,7 @@ namespace imperugo.wpc.netflix.apis
 					options =>
 					{
 						// https://gist.github.com/wallymathieu/e149735645232dfc0dd92f8e6fc71f9b
-						options.ConfigureOAuth2("wpc-netflix-swagger", "6qP>]jQmdXQURk]fL]p4]%D6(92uSkby", "swagger-ui-realm", "API Swagger UI");
+						options.ConfigureOAuth2("wpc-netflix-swagger", "super-secret-key", "swagger-ui-realm", "API Swagger UI");
 
 						// build a swagger endpoint for each discovered API version
 						foreach (var description in provider.ApiVersionDescriptions)
