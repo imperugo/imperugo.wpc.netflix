@@ -10,6 +10,7 @@ namespace imperugo.wpc.netflix.apis.Apis.v1
 	/// Represents a RESTful utility service.
 	/// </summary>
 	[ApiVersion("1.0")]
+	[ApiVersion("0.9", Deprecated = true)]
 	[Route("v1.0/Utility/[action]")]
 	public class UtilityController : ApiControllerBase
 	{

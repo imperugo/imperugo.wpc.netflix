@@ -125,6 +125,7 @@ namespace imperugo.wpc.netflix.apis
 			if (environment.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
+				app.SeedDatabase();
 			}
 
 			app.UseAuthentication();

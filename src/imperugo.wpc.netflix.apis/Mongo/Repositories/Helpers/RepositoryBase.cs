@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using imperugo.wpc.netflix.apis.Mongo.Documents;
+using imperugo.wpc.netflix.apis.Mongo.Extensions;
 using MongoDB.Driver;
 using Sequence = imperugo.wpc.netflix.apis.Mongo.Documents.Sequence;
 

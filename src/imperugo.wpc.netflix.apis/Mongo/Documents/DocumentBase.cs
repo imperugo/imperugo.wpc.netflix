@@ -1,4 +1,6 @@
 ﻿using System;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace imperugo.wpc.netflix.apis.Mongo.Documents
 {
@@ -10,6 +12,7 @@ namespace imperugo.wpc.netflix.apis.Mongo.Documents
 		}
 
 		public string Id { get; set; }
+		
 		public DateTime CreateAt { get; private set; }
 	}
 }

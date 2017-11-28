@@ -2,7 +2,7 @@
 using Humanizer;
 using MongoDB.Driver;
 
-namespace imperugo.wpc.netflix.apis.Mongo
+namespace imperugo.wpc.netflix.apis.Mongo.Extensions
 {
 	public static class MongoDatabaseExtensions
 	{
